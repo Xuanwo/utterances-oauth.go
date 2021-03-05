@@ -1,13 +1,13 @@
-package token
+package api
 
 import (
 	"fmt"
 	"net/http"
 
-	"uapi/cors"
+	"github.com/Xuanwo/utterances-oauth.go/cors"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func Token(w http.ResponseWriter, r *http.Request) {
 	cors.Add(w, r)
 	_cookie, err := r.Cookie("token")
 	if err != nil {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"uapi/app"
+	"github.com/Xuanwo/utterances-oauth.go/app"
 )
 
 func main() { app.Start() }

@@ -1,5 +1,7 @@
 # utterances-oauth.go
 
+This project is forked from https://github.com/GizmoOAO/utterances-oauth.go
+
 [utterances](https://github.com/utterance) API 的非官方 Golang 实现
 
 [![Build Status](https://cloud.drone.io/api/badges/GizmoOAO/utterances-oauth.go/status.svg)](https://cloud.drone.io/GizmoOAO/utterances-oauth.go)

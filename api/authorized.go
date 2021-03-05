@@ -1,4 +1,4 @@
-package authorized
+package api
 
 import (
 	"context"
@@ -7,13 +7,13 @@ import (
 	"net/url"
 	"time"
 
-	"uapi/oauth"
-	"uapi/state"
-
 	"github.com/gin-gonic/gin/binding"
+
+	"github.com/Xuanwo/utterances-oauth.go/oauth"
+	"github.com/Xuanwo/utterances-oauth.go/state"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func Authorized(w http.ResponseWriter, r *http.Request) {
 	var query struct {
 		Code  string `form:"code" binding:"required"`
 		State string `form:"state" binding:"required"`

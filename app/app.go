@@ -6,13 +6,10 @@ import (
 	"net/http"
 	"time"
 
-	"uapi/api/authorize"
-	"uapi/api/authorized"
-	"uapi/api/issue"
-	"uapi/api/token"
-
 	"github.com/gorilla/mux"
 	_ "github.com/joho/godotenv/autoload"
+
+	"github.com/Xuanwo/utterances-oauth.go/api"
 )
 
 func Start() {
@@ -24,10 +21,10 @@ func Start() {
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		_, _ = fmt.Fprint(w, "alive")
 	}).Methods(http.MethodGet)
-	r.HandleFunc("/token", token.Handler).Methods(http.MethodPost)
-	r.HandleFunc("/authorize", authorize.Handler).Methods(http.MethodGet)
-	r.HandleFunc("/authorized", authorized.Handler).Methods(http.MethodGet)
-	r.HandleFunc("/repos/{owner}/{repo}/issues", issue.Handler).Methods(http.MethodPost)
+	r.HandleFunc("/token", api.Token).Methods(http.MethodPost)
+	r.HandleFunc("/authorize", api.Authorize).Methods(http.MethodGet)
+	r.HandleFunc("/authorized", api.Authorized).Methods(http.MethodGet)
+	r.HandleFunc("/repos/{owner}/{repo}/issues", api.Issue).Methods(http.MethodPost)
 
 	s := &http.Server{
 		Addr:         "0.0.0.0:5000",

@@ -1,4 +1,4 @@
-module uapi
+module github.com/Xuanwo/utterances-oauth.go
 
 go 1.15
 

@@ -1,4 +1,4 @@
-package issue
+package api
 
 import (
 	"context"
@@ -8,15 +8,15 @@ import (
 	"regexp"
 	"strings"
 
-	"uapi/cors"
-	github_api "uapi/github-api"
-	"uapi/oauth"
-
 	"github.com/gin-gonic/gin/binding"
 	"github.com/gorilla/mux"
+
+	"github.com/Xuanwo/utterances-oauth.go/cors"
+	github_api "github.com/Xuanwo/utterances-oauth.go/github-api"
+	"github.com/Xuanwo/utterances-oauth.go/oauth"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func Issue(w http.ResponseWriter, r *http.Request) {
 	cors.Add(w, r)
 	var owner, repo string
 	vars := mux.Vars(r)

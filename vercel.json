@@ -2,19 +2,19 @@
   "rewrites": [
     {
       "source": "/token",
-      "destination": "/api/token/index.go"
+      "destination": "/api/token.go"
     },
     {
       "source": "/authorize",
-      "destination": "/api/authorize/index.go"
+      "destination": "/api/authorize.go"
     },
     {
       "source": "/authorized",
-      "destination": "/api/authorized/index.go"
+      "destination": "/api/authorized.go"
     },
     {
       "source": "/repos/:owner/:repo/issues",
-      "destination": "/api/issue/index.go"
+      "destination": "/api/issue.go"
     }
   ],
   "build": {

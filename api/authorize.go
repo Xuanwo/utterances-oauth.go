@@ -1,15 +1,15 @@
-package authorize
+package api
 
 import (
 	"net/http"
 
-	"uapi/oauth"
-	"uapi/state"
-
 	"github.com/gin-gonic/gin/binding"
+
+	"github.com/Xuanwo/utterances-oauth.go/oauth"
+	"github.com/Xuanwo/utterances-oauth.go/state"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func Authorize(w http.ResponseWriter, r *http.Request) {
 	var query struct {
 		RedirectUri string `form:"redirect_uri" binding:"required"`
 	}
