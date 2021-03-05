@@ -2,4 +2,8 @@
 /.vscode/
 
 .env
-secrets.txt
+.cache
+chrome
+dist
+node_modules
+yarn-error.log
